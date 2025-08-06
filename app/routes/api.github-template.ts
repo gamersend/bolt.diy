@@ -65,8 +65,8 @@ async function fetchRepoContentsCloudflare(repo: string, githubToken?: string) {
       item.path.endsWith('yarn.lock') ||
       item.path.endsWith('pnpm-lock.yaml');
 
-    // For non-lock files, limit size to 100KB
-    if (!isLockFile && item.size >= 100000) {
+    // For non-lock files, limit size to 4MB
+    if (!isLockFile && item.size >= 4 * 1024 * 1024) {
       return false;
     }
 

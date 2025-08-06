@@ -60,7 +60,7 @@ const FullscreenOverlay = memo(({ isFullscreen, children }: { isFullscreen: bool
   );
 });
 
-const MAX_FILE_SIZE = 1024 * 1024; // 1MB
+const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
 const BINARY_REGEX = /[\x00-\x08\x0E-\x1F]/;
 
 const isBinaryFile = (content: string) => {
